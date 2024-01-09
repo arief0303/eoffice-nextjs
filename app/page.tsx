@@ -1,11 +1,15 @@
-import Image from 'next/image'
+'use client'
+import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 export default function Home() {
+  const router = useRouter()
+
   return (
     <>
       <div className="h-24 flex items-center justify-center">
         {/* <button className="w-12 h-12 absolute left-0 ml-7" onClick={() => navigate(-1)}> */}
-        <button className="w-12 h-12 absolute left-0 ml-7">
+        <button className="w-12 h-12 absolute left-0 ml-7" onClick={() => router.back()}>
           <div className="w-12 h-12 left-0 top-0 absolute bg-white rounded-[18px] border border-zinc-300"></div>
           <div className="w-6 h-6 left-[12px] top-[12px] absolute">
             <img src="/icons/chevron-left.png" alt="chevron-left" />
@@ -15,7 +19,7 @@ export default function Home() {
       </div>
       <div className="ml-8 text-gray-800 text-base font-medium font-sans">Aktivitas</div>
       <div className="mt-4 ml-4 w-[280px] h-24 justify-start items-start gap-3.5 inline-flex">
-        {/* <Link to='/human-resource'> */}
+        <Link href='/human-resource'>
           <div className="flex-col justify-start items-center gap-2 inline-flex">
             <div className="w-[54px] p-[11px] bg-white rounded-[18px] shadow justify-start items-start gap-2.5 inline-flex">
               <div className="w-8 h-8 justify-center items-center flex">
@@ -26,7 +30,7 @@ export default function Home() {
             </div>
             <div className="w-[82px] h-[34px] text-center text-slate-500 text-xs font-normal font-sans">HR</div>
           </div>
-        {/* </Link> */}
+        </Link>
         <div className="flex-col justify-center items-center gap-2 inline-flex">
           <div className="w-[54px] p-[11px] bg-white rounded-[18px] shadow justify-start items-start gap-2.5 inline-flex">
             <div className="w-8 h-8 justify-center items-center flex">
